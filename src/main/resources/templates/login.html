@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>User List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/css/style.css}"  rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <!-- Login Form -->
+            <form th:action="@{/login}" th:object="${post}" method="post">
+                <input type="text" th:field="*{username}" id="login" class="fadeIn second" name="id" placeholder="login">
+                <input type="text" id="password" th:field="*{password}" class="fadeIn third" name="content" placeholder="password">
+                <input type="hidden" th:value="${redirect}"name="redirect">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
